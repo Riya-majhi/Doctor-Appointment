@@ -1,0 +1,250 @@
+<?php
+  require 'pages/modal-validation.php';
+?>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>Docscape</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Bootstrap CSS File -->
+  <link href="assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="assets/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/lib/animate/animate.min.css" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="assets/lib/css/Homepage.css" rel="stylesheet">
+
+  <!-- JavaScript Libraries -->
+  <script src="assets/lib/jquery/jquery.min.js"></script>        <!-- Main js lib for supporting js in this page -->
+  <script src="assets/lib/easing/easing.min.js"></script><!-- for smooth animation to options on the same section- here conta us -->
+  <script src="assets/lib/wow/wow.min.js"></script>              <!-- for animations after loading -->
+  <script src="assets/lib/superfish/superfish.min.js"></script>  <!-- for animation -->
+
+  <!--Javascript File -->
+  <script src="assets/lib/js/main.js"></script>
+</head>
+
+<body>
+
+  <!-------Header section-------->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h3 style="color: white;font-family: algerian;font-style: italic;">DOCSCAPE</h3>
+      </div>
+
+        <!--********Navigation Menu********-->
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu"><a href="#top-body">Home</a></li>
+          <li><a href="pages/myuserlogin.php">Log in</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#" id="admin">Admin</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+
+     <!--******** admin modal section******* -->
+    <div class="back-modal wow fadeIn">
+    	<div class="inside-modal">
+    		<div class="close" style="margin-right: 15px; transform: rotate(45deg);font-size: 35px;">+</div>
+    		<img src="assets/img/admin.png" height="60" class="rounded-circle" style="border: 2px solid green;margin-top: 20%;margin-left: 16%;">
+    		<form action="" method="POST">
+    			<input type="text" name="name" style="margin-top: 30%; padding:0px; border:  2px solid cyan;outline: none; border-radius: 7px;"placeholder="Name">
+    			<input type="Password" name="password" style="margin-top: 5px; border: 2px solid cyan; border-radius: 7px;outline: none;" placeholder="Password">
+    			<button type="submit" class="badge-success button" name="btn-admin" >Submit</button>
+    		</form>
+    	</div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#admin").click(function(){
+          $(".back-modal").css('display','flex');
+        });
+
+        $(".close").click(function(){
+          $(".back-modal").css('display','none');
+        });
+
+      });
+    </script> <!-- admin modal end -->
+  </header><!--header end -->
+  <!--Top-body-section--> 
+  <section id="top-body">
+    <div class="inside-top-body">
+      <h1>Welcome to docscape</h1>
+      <h2>We are in a misson to save millions of life</h2>
+      <a href="#search-section" class="btn-search">click to search</a>
+    </div>
+  </section><!-- top-body -->
+
+  <main id="main">
+
+    <!---------search Section------------->
+    <section id="search-section">
+      <div class="container">
+        <div class="row search-container">
+          <div class="col-lg-12 content order-lg-1 order-2">
+          	<h2 class="title">Our search section</h2>
+          	<div class="icon-box wow fadeInUp">
+            <div class="row p-5 bg-light">
+			<div class="col-md-4 text-right mt-2 p-2">
+				<label style="font-family: Ink free">Search By City</label>	
+			</div>
+			<form action="pages/doctors_page_notlogin.php" method="POST">
+				<div class="col-md-12 p-2 search">
+					<select class="form-control form-control-md search-by-city-form" required="" name="location">
+						<option value="">Select your city from menu</option>
+						<option value="Kolkata">Kolkata</option>
+						<option value="Bardhaman">Bardhaman</option>
+						<option value="Chinsurah">Chinsurah</option>
+					</select>	
+          <input type="hidden" name="spec">
+					<div class="col-md-10 text-right mt-2 p-2">	
+						<div class="Go">
+							<button type="submit" class="badge-success button" name="search_btn">Search</button>
+						</div>
+					</div>			
+				</div>
+			</form>
+		</div>
+	</div>
+            <div class="icon-box wow fadeInUp">
+            <h3 style="font-family: Ink Free;">Follow these steps to search:-</h3>
+              <h4 class="title">1. Select your location from the menu</h4>
+            </div>
+
+            <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
+              <h4 class="title">2. Click On the Search button</h4>
+            </div>
+
+            <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
+              <h4 class="title">3. Select your preffered Physician</h4>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!-- call to action (Ambu) -->
+    <section id="call-to-action">
+      <div class="container wow fadeIn">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-left">
+            <h3 class="cta-title">Emergancy call -102</h3>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #call-to-action -->
+
+    <!-- Team section -->
+    <section id="team">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title" style="font-family: Ink free">Our Doctors</h3>
+          <h4 class="section-description" style="font-family: Ink free">Here are some of the Renowned doctors we have</h4>
+          <br><br>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="assets/img/doctor1.jpg" alt=""></div>
+              <h4>DR. Kamalesh Kothari</h4>
+              <span>MBBS</span>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="assets/img/doctor2.jpg" alt=""></div>
+              <h4>Dr. Samir Chandra Das</h4>
+              <span>MD</span>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="assets/img/doctor3.jpg" alt=""></div>
+              <h4>Dr. Debottam Bandyopadhyay</h4>
+              <span>MBBS</span>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="assets/img/doctor4.jpg" alt=""></div>
+              <h4>Dr. Sharmistha Ganguly (Bhattacharya)</h4>
+              <span>MBBS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+    <!-- contact section -->
+    <section id="contact">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h3 class="section-title" style="font-family: Ink free">Contact Us</h3>
+        </div>
+      </div>
+      <div class="container wow fadeInUp mt-5">
+        <div class="row justify-content-center">
+
+          <div class="col-md-3">
+
+            <div class="info">
+              <div class="mb-3">
+                <i class="fa fa-envelope"></i>
+                <a href="#" class="">&nbsp;&nbsp;ghosharunava57@gmail.com</a>
+              </div>
+
+              <div class="mb-3">
+                <i class="fa fa-phone"></i>
+                <p>09830299410</p>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+            </div>
+
+          </div>
+      </div>
+    </section><!-- #contact -->
+
+</main>
+
+  <!-- Footer  -->
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="col-md-11">
+      <div class="copyright">
+      Copyright <strong>&copy; Docscape</strong>
+    </div>
+        
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+/*Modal section*/
+.back-modal{
+  width:100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.inside-modal{
+  width: 300px;
+  height: 400px;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+.btn-ser{
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 30px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-ser:hover {
+  background: #2dc997;
+  border: 2px solid #2dc997;
+}

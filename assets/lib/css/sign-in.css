@@ -1,0 +1,9 @@
+body{
+	background-image: url(../../img/health.jpg);
+	background-size: cover;
+}
+.register-right{
+	margin-top: 40px;
+	background:rgba(255, 255, 255, 0.3); 
+	
+}
